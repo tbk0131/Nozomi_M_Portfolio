@@ -1,0 +1,376 @@
+@charset "utf-8";
+
+
+
+/* 共通 */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(../image/vintage-lerther-db.jpg);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  font-family: "游ゴシック", Yu Gothic;
+  font-size: 14px;
+  line-height: 1.8em;
+}
+
+.wrapper {
+  width: 77.4%;
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: #f3e5d3a2;
+}
+
+section {
+  text-align: center;
+  margin: 25% 0;
+  padding: 0 12.4%;
+}
+
+section:first-of-type {
+  padding-top: 8.3%;
+}
+
+section:last-child {
+  padding-bottom: 8.3%;
+}
+
+#main-visual-title {
+  font-size: 3rem;
+  letter-spacing: .4em;
+}
+
+#main-visual-title,
+.main-visual-text {
+  color: rgba(209, 201, 191, 0.808);
+  text-shadow: 1px 0 5px #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+.main-visual,
+.gnavi__item {
+  font-family: 'New Tegomin', serif;
+  line-height: 2em;
+}
+
+.main-visual-text {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2.4em;
+  line-height: 1.2em;
+}
+
+.section__title img {
+  vertical-align: top;
+  height: 6.4em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px dotted #333333;
+}
+
+h4 {
+  font-size: 1.3rem;
+  border-bottom: 1px dotted #333333;
+}
+
+
+/* 共通ここまで */
+
+
+
+
+
+/* ヘッダー・メインここから */
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  object-fit: contain;
+  background-image: url(../image/087_02.png);
+}
+
+.gnavi {
+  display: flex;
+  align-items: center;
+  height: 116px;
+  /* width: 60%;
+  margin-left: auto; */
+  float: right;
+}
+
+
+ul.gnavi__list {
+  display: flex;
+  list-style-type: none;
+  width: 100%;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+
+.gnavi__item {
+  transition: .8s all;
+  position: relative;
+  margin-left: .5rem;
+}
+
+.gnavi__item::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  background-image: url(../image/076e.png);
+  background-position: center center;
+  background-size: contain;
+  z-index: -1;
+  opacity: 0;
+  transition: .8s all;
+}
+
+.gnavi__item:hover::after {
+  opacity: 0.48;
+}
+
+.gnavi__item a {
+  padding: 1rem;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.5rem;
+  opacity: 1;
+}
+
+/* ヘッダー制御 */
+#header.UpMove{
+	animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime{
+  from {
+    opacity: 1;
+	transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+	transform: translateY(-100px);
+  }
+}
+
+#header.DownMove{
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+  	opacity: 0;
+	transform: translateY(-100px);
+  }
+  to {
+  	opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+
+.main-visual {
+  height: 100vh;
+  background-image: url(../image/book.JPG);
+  display: flex;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ヘッダーここまで */
+
+
+
+
+/* worksここから */
+.w__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  gap: 3em;
+}
+
+figure {
+  object-fit: contain;
+}
+
+figcaption {
+  width: 300px;
+  margin: 0 auto;
+}
+
+/* worksここまで */
+
+
+
+
+/* skill */
+
+.s__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 50px;
+  gap: 3em;
+}
+
+.grid__container {
+  display: flex;
+}
+
+.grid__container img {
+  width: 100px;
+  height: 100px;
+}
+
+.skill__text {
+  padding: 0 1.5rem;
+}
+
+.skill__text span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* skillここまで */
+
+
+
+
+
+/* profile */
+.p__myself,
+.p__content {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  gap: 2.4rem;
+  margin-bottom: 4.8rem;
+}
+
+.profile__ph {
+  font-family: 'New Tegomin', serif;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 3.2rem;
+}
+
+.profile__text {
+  text-align: left;
+}
+
+.profile__text p {
+  margin-bottom: 1rem;
+}
+
+.profile__text span {
+font-weight: bold;
+}
+
+.profile__text a {
+  color: #000;
+}
+
+.p__myself img {
+  max-width: 40%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px 10px;
+}
+
+.profile__love {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  max-width: 60%;
+  min-width: 40%;
+}
+
+.profile__love img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px 10px;
+}
+
+.sp {
+  margin-bottom: 2.4rem;
+}
+
+/* profileここまで */
+
+
+
+
+
+/* contact */
+#contact {
+  text-align: center;
+  font-size: 16px;
+}
+
+input[required],
+textarea {
+  width: 32em;
+  max-width: 91.3%;
+  background-color: rgba(235, 230, 224, 0.74);
+  margin-bottom: 1.5rem;
+}
+
+input[required] {
+  height: 1.6em;
+}
+
+textarea {
+  height: 12em;
+}
+
+input[type="submit"] {
+  background-color: #1a1816;
+  color: rgba(194, 184, 172);
+  padding: .5em 1.5em;
+  box-shadow: 2px 2px 6px #000;
+  font-weight: 600;
+}
+
+/* contactここまで */
+
+
+
+
+/* footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.534);
+  text-align: center;
+  color: #c2b8ac;
+  margin-bottom: 2rem;
+  padding: .5rem;
+}
+
+footer small {
+  font-size: .8rem;
+}
+
+/* footerここまで */

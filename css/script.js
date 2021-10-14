@@ -22,7 +22,7 @@ typewriter({
 
 
 ScrollReveal().reveal('.section__title,.steampunk', {
-  duration: 1100, // アニメーション
+  duration: 1000, // アニメーション
   viewFactor: 0.4, //実行
   reset: true,
 });

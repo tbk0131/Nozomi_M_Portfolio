@@ -553,14 +553,14 @@ footer small {
 
 
 /* レスポンシブ */
-@media screen and (max-width: 1102px) {
+@media (max-width: 1102px) {
   .skill__text {
     padding: 0 0 0 1.5rem;
   }
 }
 
 
-@media screen and (max-width: 692px) {
+@media (max-width: 692px) {
   body {
     font-size: 13px;
   }
@@ -615,7 +615,7 @@ footer small {
 
 
 
-@media screen and (min-width: 607px) {
+@media (min-width: 608px) {
 
   #g-nav,
   .openbtn1 {
@@ -623,10 +623,14 @@ footer small {
   }
 }
 
-@media screen and (max-width: 607px) {
+@media (max-width: 607px) {
 
   .gnavi {
     display: none;
+  }
+
+  header {
+    background-image: none;
   }
 
   .profile__ph {
@@ -637,7 +641,7 @@ footer small {
 
 
 
-@media screen and (max-width: 530px) {
+@media (max-width: 530px) {
   body {
     font-size: 12px;
   }
@@ -654,7 +658,7 @@ footer small {
 }
 
 
-@media screen and (max-width: 443px) {
+@media (max-width: 443px) {
   body {
     font-size: 12px;
   }

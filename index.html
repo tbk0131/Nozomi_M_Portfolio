@@ -8,18 +8,27 @@
   <meta name="description" content="Nozomi Miuraのポートフォリオサイトです" />
   <title>WebデザイナーNozomi Miura ポートフォリオ</title>
 
-  <!-- CSS -->
+  <!-- リセットCSS -->
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <link rel="stylesheet" href="css/style.css">
 
   <!-- CDN -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
 
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="theme-color" content="#8f2b2b">
+
   <!-- フォント -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body id="top">
@@ -29,7 +38,7 @@
     <nav>
       <div class="gnavi">
         <ul class="gnavi__list">
-          <li class="gnavi__item"><a href="#top">INDEX</a></li>
+          <li class="gnavi__item"><a href="#top">TOP</a></li>
           <li class="gnavi__item"><a href="#works">WORKS</a></li>
           <li class="gnavi__item"><a href="#skill">SKILL</a></li>
           <li class="gnavi__item"><a href="#profile">PROFILE</a></li>
@@ -37,243 +46,271 @@
         </ul>
       </div>
     </nav>
+
+    <!-- レスポンシブ用 -->
+    <div class="openbtn1"><span></span><span></span><span></span></div>
+    <nav id="g-nav">
+    <ul>
+    <li><a href="#top">TOP</a></li>
+    <li><a href="#works">WORKS</a></li>
+    <li><a href="#skill">SKILL</a></li>
+    <li><a href="#profile">PROFILE</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+    </ul>
+    </nav>
+
   </header>
 
 
   <!-- メインビジュアル -->
   <div class="main-visual">
     <div class="main-visual-inner">
-      <h1 id="main-visual-title"><!-- Nozomi Miura --></h1>
-      <!-- <p class="main-visual-subtitle">PORTFOLIO</p> -->
+      <h1 id="main-visual-title">
+        <!-- Nozomi Miura -->
+      </h1>
       <p class="main-visual-text">
         ─お客様のストーリーを形に─<br>
       </p>
+      <div id="video-area">
+        <video id="video" poster="image/book.JPG" webkit-playsinline playsinline muted autoplay loop>
+          <source src="image/top.mp4" type="video/mp4">
+          <p>動画を再生できる環境ではありません。</p>
+        </video>
+        <!--/video-area-->
+      </div>
     </div>
+
   </div>
   <!-- メインビジュアル -->
 
+  <div class="base">
 
 
-  <div class="wrapper">
+    <div class="wrapper">
 
 
-    <section id="works">
+      <section id="works">
         <h2 class="section__title"><img src="image/050j.png" alt="works"><br>WORKS</h2>
-      <div class="w__content">
-        <figure>
-          <img src="image/sample.jpg" alt="sample">
-          <figcaption>【SAMPLE】<br>
-            サンプルサンプルサンプルサンプルサンプルサンプルサンプル</figcaption>
-        </figure>
-        <figure>
-          <img src="image/sample.jpg" alt="sample">
-          <figcaption>【SAMPLE】<br>
-            サンプルサンプルサンプルサンプルサンプルサンプルサンプル</figcaption>
-        </figure>
-        <figure>
-          <img src="image/sample.jpg" alt="sample">
-          <figcaption>【SAMPLE】<br>
-            サンプルサンプルサンプルサンプルサンプルサンプルサンプル</figcaption>
-        </figure>
-        <figure>
-          <img src="image/sample.jpg" alt="sample">
-          <figcaption>【SAMPLE】<br>
-            サンプルサンプルサンプルサンプルサンプルサンプルサンプル</figcaption>
-        </figure>
-      </div>
-    </section>
+        <div class="w__content">
+          <figure>
+            <img src="image/sample.jpg" alt="sample">
+            <figcaption>【SAMPLE】<br>
+              サンプルサンプルサンプルサンプルサンプルサンプルサンプル</figcaption>
+          </figure>
+          <figure>
+            <img src="image/sample.jpg" alt="sample">
+            <figcaption>【SAMPLE】<br>
+              サンプルサンプルサンプルサンプルサンプルサンプルサンプル</figcaption>
+          </figure>
+          <figure>
+            <img src="image/sample.jpg" alt="sample">
+            <figcaption>【SAMPLE】<br>
+              サンプルサンプルサンプルサンプルサンプルサンプルサンプル</figcaption>
+          </figure>
+          <figure>
+            <img src="image/sample.jpg" alt="sample">
+            <figcaption>【SAMPLE】<br>
+              サンプルサンプルサンプルサンプルサンプルサンプルサンプル</figcaption>
+          </figure>
+        </div>
+      </section>
 
 
 
-    <section id="skill">
-      <h2 class="section__title"><img src="image/049h.png" alt="skill"><br>SKILL</h2>
-      <h3 class="skill">コーディング</h3>
-      <div class="s__content">
-        <div class="grid__container">
-          <img src="image/sk_html22.png" alt="HTML5">
-          <div class="skill__text">
-            <p><span>HTML5 ★★★★☆</span><br>
-              サンプルサンプルサンプルサンプルサンプルサンプルサンプル<br>
-            使用エディタ：Visual Studio Code</p>
+      <section id="skill">
+        <h2 class="section__title"><img src="image/049h.png" alt="skill"><br>SKILL</h2>
+        <h3 class="skill">コーディング</h3>
+        <div class="s__content">
+          <div class="grid__container">
+            <img src="image/sk_html22.png" alt="HTML5">
+            <div class="skill__text">
+              <p><span>HTML5 ★★★★☆</span><br>
+                HTMLの仕組みやコーディングを基礎から学び、デザインカンプからの実装など、ウェブサイト制作に必要な必須知識を習得しました。<br>
+                使用エディタ：Visual Studio Code</p>
+            </div>
           </div>
-        </div>
-        <div class="grid__container">
-          <img src="image/sk_{}2.png" alt="css">
-          <div class="skill__text">
-            <p><span>CSS ★★★★☆</span><br>
-              サンプルサンプルサンプルサンプルサンプルサンプルサンプル<br>
-              使用エディタ：Visual Studio Code</p>
+          <div class="grid__container">
+            <img src="image/sk_{}2.png" alt="css">
+            <div class="skill__text">
+              <p><span>CSS ★★★★☆</span><br>
+                CSSの基礎を学び、レイアウトの構成やレスポンシブデザイン等、実装レベルの技術を習得しました。<br>
+                使用エディタ：Visual Studio Code</p>
+            </div>
           </div>
-        </div>
-        <div class="grid__container">
-          <img src="image/sk_js1.png" alt="JavaScript">
-          <div class="skill__text">
-            <p><span>JavaScript ★★★☆☆</span><br>
-              サンプルサンプルサンプルサンプルサンプルサンプルサンプル<br>
-              使用エディタ：Visual Studio Code</p>
+          <div class="grid__container">
+            <img src="image/sk_js1.png" alt="JavaScript">
+            <div class="skill__text">
+              <p><span>JavaScript ★★★☆☆</span><br>
+                JavaScriptの基礎からjQueryやプラグインの使用など、基礎を実践的に学びました。<br>
+                使用エディタ：Visual Studio Code</p>
+            </div>
           </div>
-        </div>
-        <div class="grid__container">
-          <img src="image/sk_wp.png" alt="WordPress">
-          <div class="skill__text">
-            <p><span>WordPress ★★★☆☆</span><br>
-              サンプルサンプルサンプルサンプルサンプルサンプルサンプル</p>
+          <div class="grid__container">
+            <img src="image/sk_wp.png" alt="WordPress">
+            <div class="skill__text">
+              <p><span>WordPress ★★★☆☆</span><br>
+                PHPの基礎からテーマファイルやテンプレートファイルの作成、WordPressの各種機能などを学びました。</p>
+            </div>
           </div>
-        </div>
-      </div><!-- /s__content -->
-      <h3 class="skill">デザイン</h3>
-      <div class="s__content">
-        <div class="grid__container">
-          <img src="image/sk_ai1.png" alt="illustrator">
-          <div class="skill__text">
-            <p><span>illustrator ★★★★☆</span><br>
-              サンプルサンプルサンプルサンプルサンプルサンプルサンプル</p>
+        </div><!-- /s__content -->
+        <h3 class="skill">デザイン</h3>
+        <div class="s__content">
+          <div class="grid__container">
+            <img src="image/sk_ai1.png" alt="illustrator">
+            <div class="skill__text">
+              <p><span>illustrator ★★★★☆</span><br>
+                デザインカンプやイラスト、名刺、バナー、ロゴなどの制作を通じて、デザイン制作物の作成技術を細やかに学びました。</p>
+            </div>
           </div>
-        </div>
-        <div class="grid__container">
-          <img src="image/sk_ps1.png" alt="Photoshop">
-          <div class="skill__text">
-            <p><span>Photoshop ★★★★☆</span><br>
-              サンプルサンプルサンプルサンプルサンプルサンプルサンプル</p>
+          <div class="grid__container">
+            <img src="image/sk_ps1.png" alt="Photoshop">
+            <div class="skill__text">
+              <p><span>Photoshop ★★★★☆</span><br>
+                基本操作から実践テクニックまで学び、画像や写真のレタッチや加工など、迅速で正確な制作技術を習得しました。</p>
+            </div>
           </div>
-        </div>
-        <div class="grid__container">
-          <img src="image/sk_xd1.png" alt="XD">
-          <div class="skill__text">
-            <p><span>XD ★★★☆☆</span><br>
-              サンプルサンプルサンプルサンプルサンプルサンプルサンプル</p>
+          <div class="grid__container">
+            <img src="image/sk_xd1.png" alt="XD">
+            <div class="skill__text">
+              <p><span>XD ★★★☆☆</span><br>
+                操作を基礎から学び、デザインカンプなど実践で活用できるよう学びました。</p>
+            </div>
           </div>
-        </div>
 
-      </div><!-- /s__content -->
-      <h3 class="skill">Office</h3>
-      <div class="s__content">
-        <div class="grid__container">
-          <img src="image/sk_word.png" alt="Word">
-          <div class="skill__text">
-            <p><span>Word ★★★★★</span><br>
-              サンプルサンプルサンプルサンプルサンプルサンプルサンプル</p>
+        </div><!-- /s__content -->
+        <h3 class="skill">Office</h3>
+        <div class="s__content">
+          <div class="grid__container">
+            <img src="image/sk_word.png" alt="Word">
+            <div class="skill__text">
+              <p><span>Word ★★★★★</span><br>
+                ビジネス文書作成からレイアウト調整や装飾など、実践的な技術が向上しました。</p>
+            </div>
           </div>
-        </div>
-        <div class="grid__container">
-          <img src="image/sk_ex.png" alt="Excel">
-          <div class="skill__text">
-            <p><span>Excel ★★★★☆</span><br>
-              サンプルサンプルサンプルサンプルサンプルサンプルサンプル</p>
+          <div class="grid__container">
+            <img src="image/sk_ex.png" alt="Excel">
+            <div class="skill__text">
+              <p><span>Excel ★★★★☆</span><br>
+                関数、グラフ、マクロ機能、データベースの活用を学び、習得度が向上しました。</p>
+            </div>
           </div>
-        </div>
-        <div class="grid__container">
-          <img src="image/sk_pp.png" alt="PowerPoint">
-          <div class="skill__text">
-            <p><span>PowerPoint ★★★★★</span><br>
-              サンプルサンプルサンプルサンプルサンプルサンプルサンプル</p>
+          <div class="grid__container">
+            <img src="image/sk_pp.png" alt="PowerPoint">
+            <div class="skill__text">
+              <p><span>PowerPoint ★★★★★</span><br>
+                実際にプレゼンテーションを行う資料制作を通じ、実践的な知識が向上しました。</p>
+            </div>
           </div>
+        </div><!-- /s__content -->
+
+      </section>
+
+
+
+      <section id="profile">
+        <h2 class="section__title"><img src="image/046f.png" alt="profile"><br>PROFILE</h2>
+        <div class="profile__ph">
+          <h4>こころざし</h4>
+          <p>─「誰もがみんな物語の主人公」─<br>
+            小さな頃、何かの物語で読んだフレーズを忘れられず育った人間が、私です。<br>
+            誰しもがそれぞれの物語を生きていて、大切に叶えたい物語を持っている。<br>
+            それを目に見える形に実現したいから、デザインの道に進みました。<br>
+            大切なものを預けていただくからこそ、ひとつひとつの要素と向き合い、<br>
+            誠意をもって形にすることをお約束します。</p>
         </div>
-      </div><!-- /s__content -->
-
-    </section>
-
-
-
-    <section id="profile">
-      <h2 class="section__title"><img src="image/046f.png" alt="profile"><br>PROFILE</h2>
-      <div class="profile__ph">
-        <h4>こころざし</h4>
-        <p>─「誰もがみんな物語の主人公」─<br>
-          小さな頃、何かの物語で読んだフレーズを忘れられず育った人間が、私です。<br>
-          誰しもがそれぞれの物語を生きていて、大切に叶えたい物語を持っている。<br>
-          それを目に見える形に実現したいから、デザインの道に進みました。<br>
-          大切なものを預けていただくからこそ、ひとつひとつの要素と向き合い、<br>
-          誠意をもって形にすることをお約束します。</p>
-      </div>
-      <div class="p__myself">
-        <img src="image/profile1-1.jpg" alt="私">
-        <div class="profile__text">
-          <h4>Miura Nozomi　-ミウラ&nbsp;ノゾミ-</h4>
-          <p>Webデザイナー<br>
-            1988年10月8日広島に生まれ、人生の大部分を広島で生きる。</p>
-          <h4>SCHOOL</h4>
-          <p>同志社大学商学部商学科<br>
-            パソコン教室HA*NA（求職者支援訓練Webデザイナー養成科）</p>
-          <h4>WORK</h4>
-          <p>株式会社広島三越&nbsp;─販売・営業・企画・バイヤー<br>
-            株式会社ネクストビート&nbsp;─キャリアアドバイザー、法人営業（IT商材）
+        <div class="p__myself">
+          <img src="image/profile1-1.jpg" alt="私">
+          <div class="profile__text">
+            <h4>Miura Nozomi　-ミウラ&nbsp;ノゾミ-</h4>
+            <p>Webデザイナー<br>
+              1988年10月8日広島に生まれ、人生の大部分を広島で生きる。</p>
+            <h4>SCHOOL</h4>
+            <p>同志社大学商学部商学科<br>
+              パソコン教室HA*NA（求職者支援訓練Webデザイナー養成科）</p>
+            <h4>WORK</h4>
+            <p>株式会社広島三越&nbsp;─販売・営業・企画・バイヤー<br>
+              株式会社ネクストビート&nbsp;─キャリアアドバイザー、法人営業（IT商材）
             </p>
+          </div>
         </div>
-      </div>
-      <div class="p__content">
-        <div class="profile__text">
-          <h4>LOVE</h4>
-          <p><span>つくること</span><br>
-          昔から物作りが好きで、自分の好みのものを愛用したい思いからリメイクや小物、アクセサリーや家具などをDIYするのが大好きです。<br>
-          いま無いものを実現する方法を考える、改善する、実現するまで諦めない。根気強さに人一倍自信があるのは、物作りで鍛えられたお陰かもしれません。</p>
+        <div class="p__content">
+          <div class="profile__text">
+            <h4>LOVE</h4>
+            <p><span>つくること</span><br>
+              昔から物作りが好きで、自分の好みのものを愛用したい思いからリメイクや小物、アクセサリーや家具などをDIYするのが大好きです。<br>
+              いま無いものを実現する方法を考える、改善する、実現するまで諦めない。根気強さに人一倍自信があるのは、物作りで鍛えられたお陰かもしれません。</p>
+          </div>
+          <div class="profile__love">
+            <a href="image/profile2.jpg" data-lightbox="group"><img src="image/profile2.jpg" alt="キーボードリメイク"></a>
+            <a href="image/profile3.jpg" data-lightbox="group""><img src=" image/profile3.jpg" alt="レザークラフト、バッグ"></a>
+            <a href="image/profile4.jpg" data-lightbox="group"><img src="image/profile4.jpg" alt="レザークラフト、ポーチ"></a>
+            <a href="image/profile5.jpg" data-lightbox="group"><img src="image/profile5.jpg" alt="手製本洋書"></a>
+          </div>
         </div>
-        <div class="profile__love">
-          <a href="image/profile2.jpg" data-lightbox="group"><img src="image/profile2.jpg" alt="キーボードリメイク"></a>
-          <a href="image/profile3.jpg" data-lightbox="group""><img src="image/profile3.jpg" alt="レザークラフト、バッグ"></a>
-          <a href="image/profile4.jpg" data-lightbox="group"><img src="image/profile4.jpg" alt="レザークラフト、ポーチ"></a>
-          <a href="image/profile5.jpg" data-lightbox="group"><img src="image/profile5.jpg" alt="手製本洋書"></a>
+        <p>・<br>・<br>・</p>
+        <div class="sp"><img src="image/052i.png" alt="steampunk"></div>
+        <div class="p__myself steampunk">
+          <img src="image/profile6.jpg" alt="もう一人の私">
+          <div class="profile__text">
+            <h4>SteamPunk</h4>
+            <p>私を形作る大切な世界観の一つがSFカルチャー「<span>スチームパンク</span>」です。<br>
+              物心ついた時には大好きだったスタジオジブリ映画『天空の城ラピュタ』から始まり、様々な映画やゲームなどを経て現在に至ります。<br>
+              スチームパンクの魅力は、伝統や古く良いものを大切にしながらも新しく斬新で、幅広い価値観を受け入れる懐の深さだと思っています。<br>
+              これが私の性質に現在も続く、好奇心や向上心の強さにも繋がっています。<br>
+              <!-- （撮影：<a href="https://twitter.com/Akatsuking5">@Akatsuking5</a>）</p> -->
+          </div>
         </div>
-      </div>
-      <p>・<br>・<br>・</p>
-      <div class="sp"><img src="image/052i.png" alt="steampunk"></div>
-      <div class="p__myself steampunk">
-        <img src="image/profile6.jpg" alt="もう一人の私">
-        <div class="profile__text">
-          <h4>SteamPunk</h4>
-          <p>私を形作る大切な世界観の一つがSFカルチャー「<span>スチームパンク</span>」です。<br>
-            物心ついた時には大好きだったスタジオジブリ映画『天空の城ラピュタ』から始まり、様々な映画やゲームなどを経て現在に至ります。<br>
-            スチームパンクの魅力は、伝統や古く良いものを大切にしながらも新しく斬新で、幅広い価値観を受け入れる懐の深さだと思っています。<br>
-            これが私の性質に現在も続く、好奇心や向上心の強さにも繋がっています。<br>
-            <!-- （撮影：<a href="https://twitter.com/Akatsuking5">@Akatsuking5</a>）</p> -->
+      </section>
+
+
+
+      <section id="contact">
+        <h2 class="section__title"><img src="image/051a.png" alt="contact"><br>CONTACT</h2>
+        <div class="c__content">
+          <form action="mail.php" method="POST" name="form">
+            <p><label>お名前（必須）<br>
+                <input type="text" name="お名前" required></label></p>
+            <p><label>メールアドレス（必須）<br>
+                <input type="email" name="メールアドレス" required></label></p>
+
+            お問い合わせ内容（必須）<br>
+            <textarea name="メッセージ" required></textarea></label></p>
+            <input type="submit" value="確認する">
+          </form>
+          <p><a href="privacy.html">プライバシーポリシー</a></p>
         </div>
-      </div>
-    </section>
+      </section>
 
 
-    
-    <section id="contact">
-      <h2 class="section__title"><img src="image/051a.png" alt="contact"><br>CONTACT</h2>
-      <div class="c__content">
-        <form action="#">
-          <p><label>お名前（必須）<br>
-              <input type="text" name="name" required></label></p>
-          <p><label>メールアドレス（必須）<br>
-              <input type="email" name="mail" required></label></p>
-
-          お問い合わせ内容（必須）<br>
-          <textarea name="message" required></textarea></label></p>
-          <input type="submit" value="確認する">
-        </form>
-      </div>
-    </section>
-
-
-  </div><!-- wrapperここまで -->
+    </div><!-- wrapperここまで -->
 
 
 
 
-  <footer>
-    <small>&copy;Nozomi Miura &nbsp;All rights reserved.</small>
-  </footer>
+    <footer>
+      <small>&copy;Nozomi Miura &nbsp;All rights reserved.</small>
+    </footer>
+
+
+
+  </div>
 
 
 
   <!-- script -->
 
 
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
 
-<!-- ScrollReveal -->
-<script src="https://unpkg.com/scrollreveal"></script>
+  <!-- ScrollReveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
 
-<!-- スクロール -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!-- スクロール -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-<!-- 自JS -->
-<script src="css/script.js"></script>
+  <!-- 自JS -->
+  <script src="css/script.js"></script>
 </body>
 
 </html>

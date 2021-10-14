@@ -15,61 +15,86 @@ const typewriter = (param) => {
   });
 };
 typewriter({
-  el: "#main-visual-title", //要素
+  el: "#main-visual-title",
   string: "Nozomi Miura", //文字列
-  speed: 140 //速度
+  speed: 160
 });
 
 
-ScrollReveal().reveal('.section__title,.steampunk', { 
-  duration: 1100, // アニメーションの完了にかかる時間
-  viewFactor: 0.6, // 0~1,どれくらい見えたら実行するか
-  reset: true   // 何回もアニメーション表示するか
+ScrollReveal().reveal('.section__title,.steampunk', {
+  duration: 1100, // アニメーション
+  viewFactor: 0.4, //実行
+  reset: true,
 });
 
 
 // スクロールリンク
-$('a[href*="#"]').click(function () {//全てのページ内リンクに適用させたい場合はa[href*="#"]のみでもOK
-	var elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
-	var pos = $(elmHash).offset().top;	//idの上部の距離を取得
-	$('body,html').animate({scrollTop: pos}, 500); //取得した位置にスクロール。500の数値が大きくなるほどゆっくりスクロール
-	return false;
+$('a[href*="#"]').click(function () {
+  var elmHash = $(this).attr('href');
+  var pos = $(elmHash).offset().top;
+  $('body,html').animate({
+    scrollTop: pos
+  }, 1100);
+  return false;
 });
 
 
 
 // ヘッダー制御
-var beforePos = 0;//スクロールの値の比較用の設定
+var headerH = $("#header").outerHeight(true);
 
-//スクロール途中でヘッダーが消え、上にスクロールすると復活する設定を関数にまとめる
-function ScrollAnime() {
-    var elemTop = $('.main-visual').offset().top;
-	var scroll = $(window).scrollTop();
-    //ヘッダーの出し入れをする
-    if(scroll == beforePos) {
-		//IE11対策で処理を入れない
-    }else if(elemTop > scroll || 0 > scroll - beforePos){
-		//ヘッダーが上から出現する
-		$('#header').removeClass('UpMove');	//#headerにUpMoveというクラス名を除き
-		$('#header').addClass('DownMove');//#headerにDownMoveのクラス名を追加
-    }else {
-		//ヘッダーが上に消える
-        $('#header').removeClass('DownMove');//#headerにDownMoveというクラス名を除き
-		$('#header').addClass('UpMove');//#headerにUpMoveのクラス名を追加
-    }
-    
-    beforePos = scroll;//現在のスクロール値を比較用のbeforePosに格納
+function FixedAnime() {
+  //ヘッダーの高さを取得
+  var scroll = $(window).scrollTop();
+  if (scroll >= headerH) {
+    $('#header').addClass('HeightMin');
+    $('.gnavi').addClass('HeightMin');
+  } else {
+    $('#header').removeClass('HeightMin');
+    $('.gnavi').removeClass('HeightMin');
+  }
 }
 
 
-// 画面をスクロールをしたら動かしたい場合の記述
 $(window).scroll(function () {
-	ScrollAnime();//スクロール途中でヘッダーが消え、上にスクロールすると復活する関数を呼ぶ
+  FixedAnime();
 });
 
-// ページが読み込まれたらすぐに動かしたい場合の記述
+
 $(window).on('load', function () {
-	ScrollAnime();//スクロール途中でヘッダーが消え、上にスクロールすると復活する関数を呼ぶ
+  FixedAnime();
 });
 
 
+
+$('#g-navi li a').click(function () {
+  var headerVal = $("#header").outerHeight(true);
+
+
+  var scroll = $(window).scrollTop();
+  var adjust = 0;
+  if (scroll <= headerVal) {
+    adjust = 70;
+  }
+
+  var elmHash = $(this).attr('href'); //hrefを取得
+  var pos = $(elmHash).offset().top - headerVal - adjust;
+
+  $('body,html').animate({
+    scrollTop: pos
+  }, 1500);
+  return false;
+});
+
+
+
+// レスポンシブナブ
+$(".openbtn1").click(function () {
+  $(this).toggleClass('active');
+  $("#g-nav").toggleClass('panelactive');
+});
+
+$("#g-nav a").click(function () {
+  $(".openbtn1").removeClass('active');
+  $("#g-nav").removeClass('panelactive');
+});

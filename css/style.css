@@ -13,12 +13,16 @@
 }
 
 body {
-  background-image: url(../image/vintage-lerther-db.jpg);
-  background-repeat: repeat;
-  background-attachment: fixed;
   font-family: "游ゴシック", Yu Gothic;
   font-size: 14px;
   line-height: 1.8em;
+}
+
+.base {
+  background-image: url(../image/vintage-lerther-db.jpg);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  padding: 2rem 0 0 0;
 }
 
 .wrapper {
@@ -36,6 +40,7 @@ section {
 
 section:first-of-type {
   padding-top: 8.3%;
+  margin-top: 16.6%;
 }
 
 section:last-child {
@@ -101,7 +106,8 @@ h4 {
 header {
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 10;
+  height: 116px;
   width: 100%;
   object-fit: contain;
   background-image: url(../image/087_02.png);
@@ -111,8 +117,6 @@ header {
   display: flex;
   align-items: center;
   height: 116px;
-  /* width: 60%;
-  margin-left: auto; */
   float: right;
 }
 
@@ -121,7 +125,6 @@ ul.gnavi__list {
   display: flex;
   list-style-type: none;
   width: 100%;
-  /* justify-content: space-around; */
   align-items: center;
 }
 
@@ -161,28 +164,24 @@ ul.gnavi__list {
 }
 
 /* ヘッダー制御 */
-#header.UpMove{
-	animation: UpAnime 0.5s forwards;
-}
-
-@keyframes UpAnime{
-  from {
-    opacity: 1;
-	transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-	transform: translateY(-100px);
-  }
-}
-
-#header.DownMove{
+/*HeightMinというクラス名がついたら高さを小さく、上部固定に*/
+#header.HeightMin{
+	position: fixed;
+    z-index: 999;/*最前面へ*/
+	height:70px;
 	animation: DownAnime 0.5s forwards;
+  background-position: left bottom;
 }
+
+.gnavi.HeightMin {
+  height: 70px;
+  align-items: flex-start;
+}
+
 @keyframes DownAnime{
   from {
   	opacity: 0;
-	transform: translateY(-100px);
+	transform: translateY(-116px);
   }
   to {
   	opacity: 1;
@@ -191,15 +190,168 @@ ul.gnavi__list {
 }
 
 
+/* #header.UpMove {
+  animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+#header.DownMove {
+  animation: DownAnime 0.5s forwards;
+}
+
+@keyframes DownAnime {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+
 .main-visual {
   height: 100vh;
-  background-image: url(../image/book.JPG);
   display: flex;
-  background-size: cover;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
+
+#video-area {
+  position: fixed;
+  z-index: -1;
+  /*最背面*/
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#video {
+  width: 177.77777778vh;
+  height: 56.25vw;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+
+
+#g-nav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100vh;
+  background: #333;
+  transition: all 0.6s;
+}
+
+#g-nav.panelactive {
+  left: 0;
+}
+
+
+#g-nav.panelactive #g-nav-list {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#g-nav li {
+  list-style: none;
+  text-align: center;
+}
+
+#g-nav li a {
+  color: rgba(209, 201, 191, 0.808);
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+/* ハンバーガーボタン */
+.openbtn1 {
+  position: fixed;
+  z-index: 9999;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+.openbtn1 span {
+  display: inline-block;
+  transition: all .4s;
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: rgba(209, 201, 191, 0.808);
+  width: 45%;
+}
+
+.openbtn1 span:nth-of-type(1) {
+  top: 15px;
+}
+
+.openbtn1 span:nth-of-type(2) {
+  top: 23px;
+}
+
+.openbtn1 span:nth-of-type(3) {
+  top: 31px;
+}
+
+.openbtn1.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.openbtn1.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
 
 /* ヘッダーここまで */
 
@@ -209,11 +361,14 @@ ul.gnavi__list {
 /* worksここから */
 .w__content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3em;
 }
 
-figure {
+.w__content img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
   object-fit: contain;
 }
 
@@ -231,7 +386,7 @@ figcaption {
 
 .s__content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-bottom: 50px;
   gap: 3em;
 }
@@ -247,6 +402,7 @@ figcaption {
 
 .skill__text {
   padding: 0 1.5rem;
+  text-align: left;
 }
 
 .skill__text span {
@@ -286,7 +442,7 @@ figcaption {
 }
 
 .profile__text span {
-font-weight: bold;
+  font-weight: bold;
 }
 
 .profile__text a {
@@ -302,7 +458,7 @@ font-weight: bold;
 
 .profile__love {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.6rem;
   max-width: 60%;
   min-width: 40%;
@@ -353,6 +509,12 @@ input[type="submit"] {
   padding: .5em 1.5em;
   box-shadow: 2px 2px 6px #000;
   font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+#contact a {
+  color: #000;
+  font-size: 14px;
 }
 
 /* contactここまで */
@@ -365,8 +527,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.534);
   text-align: center;
   color: #c2b8ac;
-  margin-bottom: 2rem;
-  padding: .5rem;
+  padding: 1.6rem;
 }
 
 footer small {
@@ -374,3 +535,141 @@ footer small {
 }
 
 /* footerここまで */
+
+
+
+
+
+
+/* プライバシーポリシー */
+#privacy .wrapper {
+  margin-top: 200px;
+  padding: 2.4rem 2.4rem;
+}
+
+
+
+
+
+
+/* レスポンシブ */
+@media screen and (max-width: 1102px) {
+  .skill__text {
+    padding: 0 0 0 1.5rem;
+  }
+}
+
+
+@media screen and (max-width: 692px) {
+  body {
+    font-size: 13px;
+  }
+
+  h2 {
+    margin-bottom: 2em;
+  }
+
+  .base {
+    width: 100%;
+  }
+
+  .section__title img {
+    height: 4.8em;
+  }
+
+  section:first-of-type {
+    margin-bottom: 37%;
+  }
+
+  figcaption {
+    width: 100%;
+  }
+
+  
+  .skill__text {
+    padding: 0 0 0 1.2rem;
+  }
+
+  .p__myself,
+  .p__content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .profile__ph {
+    text-align: left;
+  }
+
+  .profile__love {
+    width: 100%;
+    height: auto;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .p__myself img {
+    max-width: 60%;
+  }
+}
+
+
+
+@media screen and (min-width: 607px) {
+
+  #g-nav,
+  .openbtn1 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 607px) {
+
+  .gnavi {
+    display: none;
+  }
+
+  .profile__ph {
+    font-size: 14px;
+  }
+
+}
+
+
+
+@media screen and (max-width: 530px) {
+  body {
+    font-size: 12px;
+  }
+
+  section {
+    padding: 8.3%;
+  }
+
+  .w__content,
+  .s__content {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2em;
+  }
+}
+
+
+@media screen and (max-width: 443px) {
+  body {
+    font-size: 12px;
+  }
+
+  .grid__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section__title img {
+    height: 4em;
+  }
+
+  .profile__ph {
+    font-size: 13px;
+  }
+
+}

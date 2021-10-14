@@ -609,9 +609,6 @@ footer small {
 
 
 @media (max-width: 530px) {
-  body {
-    font-size: 12px;
-  }
 
   section {
     padding: 8.3%;
@@ -626,9 +623,6 @@ footer small {
 
 
 @media (max-width: 443px) {
-  body {
-    font-size: 12px;
-  }
 
   .grid__container {
     flex-direction: column;

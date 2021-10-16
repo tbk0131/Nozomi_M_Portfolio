@@ -150,8 +150,17 @@ ul.gnavi__list {
   transition: .8s all;
 }
 
+.gnavi__item a {
+  transition: .4s all;
+}
+
+.gnavi__item a:hover {
+  color: #dbd1c3;
+  font-weight: bold;
+}
+
 .gnavi__item:hover::after {
-  opacity: 0.48;
+  opacity: 0.9;
 }
 
 .gnavi__item a {
